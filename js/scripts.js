@@ -6,19 +6,29 @@ window.addEventListener("load", () => {
     }, 1000);
 });
 
-/* ------------------ Bg Animation Effect --------------------*/
-function bgAnimationEffect() {
-  const rows = 7,
-    cols = 10;
-  for (let i = 0; i < rows; i++) {
-    for (let j = 0; j < cols; j++) {
-      const div = document.createElement("div");
-      div.className = `col-${j + 1}`;
-      document.querySelector(".bg-animation-effect").appendChild(div);
-    }
+/* --------------- Rain Background ------------- */
+function rain() {
+  let amount = 200;
+  let body = document.querySelector(".bg-animation-effect");
+  let i = 0;
+  while (i < amount) {
+    let drop = document.createElement("i");
+
+    let size = Math.random() * 5;
+    let posX = Math.floor(Math.random() * window.innerWidth);
+    let delay = Math.random() * -20;
+    let duration = Math.random() * 5;
+
+    drop.style.width = 0.2 + size + "px";
+    drop.style.left = posX + "px";
+    drop.style.animationDelay = delay+'s';
+    drop.style.animationDuration = 1 + duration+'s';
+    body.appendChild(drop);
+    i++;
   }
 }
-bgAnimationEffect();
+
+rain();
 
 /* --------------- Scroll Home ------------- */
 let sr = ScrollReveal({
