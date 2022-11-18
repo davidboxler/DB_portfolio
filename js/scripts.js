@@ -6,7 +6,7 @@ window.addEventListener("load", () => {
     }, 1000);
 });
 
-/* --------------- Rain Background ------------- */
+/* --------------- Show Rains Background ------------- */
 function rain() {
   let amount = 200;
   let body = document.querySelector(".bg-animation-effect");
@@ -108,7 +108,7 @@ filterBtnsContainer.addEventListener("click", (e) => {
     document.querySelector(".filter-status").classList.add("active");
     document.querySelector(
       ".filter-status p"
-    ).innerHTML = `filtering <span>${e.target.innerHTML}</span> works`;
+    ).innerHTML = `<span>${e.target.innerHTML}</span> trabajos`;
     setTimeout(() => {
       filterItems(e.target);
     }, 400);
